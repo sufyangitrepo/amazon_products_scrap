@@ -35,10 +35,11 @@ class AmazonSpider(CrawlSpider):
         the four things
         title , price , image url , rating
         ItemLoader will be used
+
         """
         name = response.xpath('//span[@id="productTitle"]/text()').extract_first()
         if name:
-
+            scrapy.Request()
             item = AmazonBootItem()  # Item Instance
             # ItemLoader
             loader = ItemLoader(item=item, selector=response)
